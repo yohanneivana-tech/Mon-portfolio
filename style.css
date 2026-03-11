@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    color: #333;
+}
+
+header {
+    background: #111;
+    color: white;
+    padding: 15px 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/*home-accueil*/
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #4b79a1, #283e51);
+    color: white;
+    text-align: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: white;
+    color: #283e51;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+.project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
