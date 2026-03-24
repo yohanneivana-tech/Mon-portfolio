@@ -6,38 +6,153 @@
     <meta type="description" content="ceci est mon portfolio Étudiante">
     <link rel="stylesheet" href="style.css">
     <title> Mon Portfolio</title>
+    <!-- Google Font: clean & modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Accueil</a></li>
+
+<!-- =============================================
+       NAVIGATION BAR
+============================================= -->
+     <nav>
+        <div class="nav-name"><i>T.Yohanne</i></div>
+            <ul class="nav-links">
                 <li><a href="#about">À propos</a></li>
-                <li><a href="#projects">Projets</a></li>
                 <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
-    </header>
+    </nav>
 
-    <!-- section Accueil-->
-    <section id="home" class="hero">
+<!-- =============================================
+       HERO — First thing visitors see
+============================================= -->
+    <section id="hero">
+
         <div class="hero-content">
-            <h1>Toukam Yohanne Ivana</h1>
-            <p>Je suis étudiante en Informatique et développement.</p>
-            <a href="#projects" class="btn">Voir mes projets</a>
-            <a href="#CV" class="btn">Voir mes projets</a>
-        </div>
-        <img src="img/hero2.jpg" alt="image de garde" class="hero-background">
-    </section>
-    <!-- section Accueil-->
+            <div class="hero-tag"> Open to opportunities</div>
 
-    <!-- section A propos-->
-     <section id="about">
-        <h2>À propos</h2>
-        <p>Étudiante en Bachelor Informatique, passionnée par le développement web, les systèmes/réseaux et la documentation technique.</p>
+            <h1>HI, I'm <span> Yohanne TOUKAM</span>, <br> Etudiante en Développement & Informatique</h1>
+            <p class="hero-description">
+                I build clean and functional websites. Passionate about turning ideas
+                into real digital experiences.
+            </p>
+
+            <div class="btn-group">
+                <a href="projects" class="btn btn-primary">See my work</a>
+                <a href="contact" class="btn btn-secondary">See my work</a>
+            </div>
+            
+        </div>
     </section>
-    <!-- section A propos-->
+
+<!-- =============================================
+       ABOUT
+============================================= -->
+    <section class="about-section">
+        <h2 class="title">À propos</h2>
+
+        <div class="about-container">
+            <div class="about-img">
+                <img src="img/photo-profile.png" class="img" alt="Photo de profil">
+            </div>
+       
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="presentation">Présentation</button>
+                <button class="tab-btn" data-tab="langues">Langues</button>
+                <button class="tab-btn" data-tab="softskills">Soft-skills</button>
+                <button class="tab-btn" data-tab="hobby">Centre-d'interets</button>
+            </div>  
+        </div>
+        <div class="tab-content active" id="presentation">
+             <p>
+                 Étudiante en Bachelor Informatique & Développement, je me spécialise dans les systèmes,
+                 réseaux et le développement. Curieuse et passionnée, j’aime comprendre le fonctionnement
+                 des infrastructures, résoudre des incidents et créer des projets techniques pour monter
+                 en compétences.
+                 <br>
+                 Mon objectif est de devenir une professionnelle polyvalente, capable d’intervenir aussi
+                 bien sur le support, l’administration système que sur des projets de développement et
+                 d’automatisation.
+             </p>
+        </div>
+             
+        <div class="tab-content" id="langues">
+            <ul>
+                <li>Français — 85%</li>
+                <li>Anglais — 85%</li>
+                <li>Allemand — 25%</li>
+            </ul>
+        </div>
+
+        <div class="tab-content" id="softskills">
+            <ul>
+                <li>Organisation</li>
+                <li>Adaptabilité</li>
+                <li>Esprit d’analyse</li>
+                <li>Travail en équipe</li>
+            </ul>
+        </div>
+
+        <div class="tab-content" id="hobby">
+            <ul>
+                <li>Sport</li>
+                <li>Dessin</li>
+                <li>Voyages</li>
+            </ul>
+        </div>
+                
+    </section>
+     
+<!-- =============================================
+       SKILLS
+============================================= -->
+    <section id="skills">
+        <div class="skills-inner">
+
+            <p class="section-title">What I Know</p>
+            <h2 class="section-heading">Mes Compètences</h2>
+
+            <div class="divider"></div>
+
+            <div class="skills-grid reveal">
+
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>Front-end</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>Back-end</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Rest API</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🛠️</div>
+                    <h3>Outils</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">nnnnn</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <!-- section Projets-->
     <section id="projects">
@@ -51,37 +166,54 @@
     </section>
     <!-- section Projets-->
 
-    <!-- section Compétences-->
-    <section id="skills">
-        <h2>Compétences</h2>
-        <ul>
-            <li>HTML / CSS / JavaScript</li>
-            <li>PHP / MySQL</li>
-            <li>Linux, Proxmox, Réseaux</li>
-            <li>Git / GitHub</li>
-        </ul>
-    </section>
-    <!-- section Compétences-->
-
-    <!-- section Contact-->
+<!-- =============================================
+       CONTACT
+============================================= -->
     <section id="contact">
-        <h2>Contact</h2>
-        <p>Email : <a href="mailto:ivana@example.com">ivana@example.com</a></p>
-        <p>LinkedIn : <a href="#">Ton profil</a></p>
-        <p>GitHub : <a href="#">Ton GitHub</a></p>
+
+        <div class="contact-inner">
+
+            <p class="section-title">Get in touch</p>
+            <h2 class="section-heading">Contact</h2>
+
+            <div class="divider"></div>
+
+            <div class="contact-grid reveal">
+                <div class="contact-text">
+                    <p>
+                        Have a project in mind or just want to say hi?
+                        Feel free to reach out — I'm always happy to chat.
+                    </p>
+                    
+                    <a href="mailto:yohanneivana@gmail.com" class="contact-btn"> Envoyer moi un mail!</a>
+                    
+                </div>
+
+                <div class="contact-link">
+                    <a class="""contact-link" href="yohanneivana@gmail.com">
+                        <span>Email</span>
+                        <span>yohanneivana@gmail.com</span>
+                    </a>
+
+                    <a class="contact-link" href="https://github.com/yohanneivana-tech" target="_blank">
+                        <span>GitHub</span>
+                        <span>github.com/yohanneivana-tech</span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        
     </section>
     <!-- section Contact-->
 
 
-    <!-- section pied de page-->
+    <!-- FOOTER-->
     <footer>
-        <p>© 2026 – Portfolio de Yohanne Ivana</p>
+        <p>© 2026 –Mon Portfolio-Yohanne Ivana -  with HTML, CSS, & JavaScript</p>
     </footer>
-    <!-- section pied de page-->
-
-    <script src="script.js">
-
-    </script>
+    
+    <script src="script.js"></script>
     
 </body>
 </html>
