@@ -323,4 +323,150 @@ section {
        SKILLS SECTION
        Full-width white background to break the page
  ============================================= */
+ #skills {
+    background: #fff;
+    max-width: 100%;
+    padding: 6rem 2rem;
+ }
+
+ .skills-inner {
+    max-width: 900px;
+    margin: 0 auto;
+ }
+
+ .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr); /* 3 columns */
+    gap:1.5rem;
+ }
+
+ .skill-card {
+    background: #f7f5f2;
+    border-radius: 12px;
+    padding: 1.75rem;
+    border: 1px solid #e8e4de;
+    transition: transform 0.2s, box-shadow 0.2s;
+ }
+
+ .skill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+ }
+
+ .skill-icon {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+ }
+
+ .skill-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+ }
+
+ .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+ }
+
+ .skill-tag {
+    background: #fff;
+    border: 1px solid #e0ddd8;
+    color: #555;
+    font-size: 0.8rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+ }
+
+
+/* =============================================
+       PROJECTS SECTION
+============================================= */
+
+/* =============================================
+       CONTACT SECTION — dark background
+============================================= */
+#contact {
+    background: #1a1a1a;
+    max-width: 100%;
+    padding: 6rem 2rem;
+    color: #fff;
+}
+
+.contact-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#contact .section-title { color: #e05c2e;}
+#contact .section-heading { color: #fff;}
+#contact .divider { color: #e05c2e;}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.contact-btn {
+    display: inline-block;
+    background: #e05c2e;
+    color: #fff;
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 25px;
+    font-family: "Italianno", cursive;
+    font-size: 25px;
+}
+
+.contact-btn:hover {
+    background: #c94d22;
+    transform: translateY(-2px);
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
  
+.contact-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid #2e2e2e;
+    text-decoration: none;
+    color: #aaa;
+    transition: color 0.2s, padding-left O.2s;
+}
+
+.contact-linnk:first-child { border-top: 1px solid #2e2e2e;}
+
+.contact-link:hover {
+    color: #fff;
+    padding-left:8px ;
+}
+
+.contact-link span:first-child {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6em;
+    font-weight: 600;
+}
+
+/* =============================================
+       FOOTER
+============================================= */
+footer {
+    background: #111;
+    color: #555;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.8rem;
+}
