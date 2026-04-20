@@ -1,20 +1,16 @@
+// Select all elements that should animate in 
+const revealElements = document.querySelectorAll('.reveal');
 
-    const buttons = document.querySelectorAll(".tab-btn");
-    const contents = document.querySelectorAll(".tab-content");
-
-    buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
-
-            // Retire l'état actif des boutons
-            btn.forEach(b => b.classList.remove("active"));
-
-            // Retire l'état actif des contenus
-            contents.forEach(c => c.classList.remove("active"));
-
-            // Active le bouton cliqué
-            btn.classList.add("active");
-
-            // Active le contenu correspondant
-            document.getElementById(button.dataset.tab).classList.add("active");
-        });
+// This function checks if an elemnt is on screen
+function checkVisibility() {
+    revealElements.forEach(function(element) {
+        const position = element.getBoundingClientRect(); // position on screen
+        if (position.top < Window.innerHeight -80) {
+            element.classList.add('Visible'); // triggers the css animation
+        }
     });
+}
+
+// Run whenever the user scrolls, and once at start
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();

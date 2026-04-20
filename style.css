@@ -38,7 +38,7 @@ body {
  }
 
  .nav-name {
-    font-weight: 700;
+    font-weight: 850;
     font-size: 2.1rem;
     color: #1a1a1a;
     font-family:"Italianno", cursive;
@@ -48,6 +48,7 @@ body {
     display: flex;
     gap: 2rem;
     list-style: none; /* removes bullet points */
+    font-weight: 600;
  }
 
  .nav-links a {
@@ -58,6 +59,10 @@ body {
  }
 
  .nav-links a:hover {
+    color: #e05c2e; /* orange-red accent color */
+ }
+
+ .nav-name:hover{
     color: #e05c2e; /* orange-red accent color */
  }
 
@@ -132,21 +137,28 @@ h1 span {
 .btn:hover {
     transform: translate(-2px);/* lifts up slightly */
     box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    color:#e05c2e;
+    border: 1.5px solid #e05c2e;
+    transform: translate(3px, -3px);
 }
+
+
 
 .btn-primary {
     background: #1a1a1a;
-    color: #fff;
+    color:  #d0cfcd;
+    border: 1.5px solid #858281;
 }
 
-.btn-secondary {
-    background: transparent;
+/* .btn-secondary {
+    /* background: transparent; */
+    /* background: #cfd2d7;
     color: #1a1a1a;
-    border: 1.5px solid #c8c4be;
-}
-.btn-secondary:hover {
+    border: 1.5px solid #121212; */
+/* } */ 
+/* .btn-secondary:hover {
     border-color: #1a1a1a;
-}
+} */
 
 /* =============================================
        REUSABLE SECTION STYLES
@@ -344,13 +356,16 @@ section {
     background: #f7f5f2;
     border-radius: 12px;
     padding: 1.75rem;
-    border: 1px solid #e8e4de;
+    border: 1.5px solid #cdcbc8;
     transition: transform 0.2s, box-shadow 0.2s;
  }
 
  .skill-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    color:#e05c2e;
+    border: 1.5px solid #e05c2e;
+    transform: translate(3px, -3px);
  }
 
  .skill-icon {
@@ -359,7 +374,7 @@ section {
  }
 
  .skill-card h3 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-bottom: 0.75rem;
     font-weight: 600;
  }
@@ -372,9 +387,9 @@ section {
 
  .skill-tag {
     background: #fff;
-    border: 1px solid #e0ddd8;
+    border: 1.5px solid #e0ddd8;
     color: #555;
-    font-size: 0.8rem;
+    font-size: 1.0rem;
     padding: 3px 10px;
     border-radius: 20px;
  }
@@ -384,11 +399,85 @@ section {
        PROJECTS SECTION
 ============================================= */
 
+.projects-grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr; /*columns*/
+    gap: 1.5rem;
+}
+
+.project-card {
+    background:white;
+    border-radius: 16px;
+    padding: 2rem;
+    border:1.5px solid #e8e4de;
+    text-decoration: none;
+    color:inherit;
+    display: block;
+    transition:transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    border-color: #e05c2e;
+}
+
+.project-num {
+    font: size 0.75rem;
+    color:#e05c2e;
+    font-weight: 700;
+    letter-spacing:0.1em;
+    margin-bottom:0.75rem;
+}
+
+.project-card h3{
+    font-size:1.2rem;
+    font-weight: 700;
+    margin-bottom:0.5rem;
+}
+
+.project-card p {
+    color:#686161;
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tech-tag {
+    background: #f0ece6;
+    color:#555;
+    font-size:0.78rem;
+    padding:3px 10px;
+    border-radius: 25px;
+    font-weight: 500;
+}
+
+/* Arrow in the top-right corner*/
+
+.project-arrow {
+    float: right;
+    font-size: 1.8rem;
+    color: #ccc;
+    margin-top: -1.5rem;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.project-card:hover .project-arrow {
+    color:#e05c2e;
+    transform: translate(3px, -3px);
+}
+
+
 /* =============================================
        CONTACT SECTION — dark background
 ============================================= */
 #contact {
-    background: #1a1a1a;
+    background:#171616;
     max-width: 100%;
     padding: 6rem 2rem;
     color: #fff;
@@ -468,5 +557,5 @@ footer {
     color: #555;
     text-align: center;
     padding: 1.5rem;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
 }
