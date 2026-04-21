@@ -34,12 +34,12 @@
 
             <h1>HI, I'm <span> Yohanne TOUKAM</span>, <br> Etudiante en Développement & Informatique</h1>
             <p class="hero-description">
-                Passionné par le web, je conçois des sites propres, fonctionnels et centrés sur l’utilisateur, pour transformer chaque idée en une véritable expérience numérique.
+                Passionné par l’informatique, j’explore autant le développement que les systèmes pour renforcer mes compétences. J’avance en apprenant, en expérimentant et en construisant des projets qui me permettent de progresser chaque jour.
             </p>
 
             <div class="btn-group">
                 <a href="#projects" class="btn btn-primary">Mes Projets</a>
-                <a href="cv" class="btn btn-primary">CV</a>
+                <a href="Document/cv-dev-Toukam-yohanne.pdf" download class="btn btn-primary">Mon CV</a>
                 <a href="#contact" class="btn btn-primary">Me Contacter</a>
             </div>
             
@@ -49,10 +49,70 @@
 <!-- =============================================
        ABOUT
 ============================================= -->
-    <section class="about-section" id="about">
-        <h2 class="title">À propos</h2>
 
-        <div class="about-container">
+    <section id="about">
+        <p class="section-title"> Who I am</p>
+        <h2 class="section-heading"> À propos </h2>
+        <div class="divider"></div>
+
+        <div class="about-wrapper">
+
+    <!-- IMAGE FIXE À GAUCHE -->
+        <div class="about-image">
+            <img id="about-img" src="img/photo-profile.png" alt="photo">
+        </div>
+
+    <!-- BOUTONS + CONTENU À DROITE -->
+    <div class="about-content">
+
+        <div class="btn-group about-buttons">
+            <button class="tab-btn active" data-tab="presentation" data-img="img/presentation">Présentation</button>
+            <button class="tab-btn" data-tab="langues" data-img="img/langues.jpg">Langues</button>
+            <button class="tab-btn" data-tab="softskills" data-img="img/softskills.jpg">Soft Skills</button>
+            <button class="tab-btn" data-tab="passions" data-img="img/passions.jpg">Passions</button>
+        </div>
+
+        <!-- CONTENUS -->
+        <div class="tab-content active" id="presentation">
+            <p>
+                    Étudiante en Bachelor Informatique & Développement, je me spécialise dans les systèmes,
+                    réseaux et le développement. Curieuse et passionnée, j’aime comprendre le fonctionnement
+                    des infrastructures, résoudre des incidents et créer des projets techniques pour monter
+                    en compétences.
+                    <br>
+                    Mon objectif est de devenir une professionnelle polyvalente, capable d’intervenir aussi
+                    bien sur le support, l’administration système que sur des projets de développement et
+                    d’automatisation.
+                </p>
+        </div>
+
+        <div class="tab-content" id="langues">
+            <ul>
+                    <li>Français — 85%</li>
+                    <li>Anglais — 85%</li>
+                    <li>Allemand — 25%</li>
+                </ul>
+        </div>
+
+        <div class="tab-content" id="softskills">
+            <ul>
+                    <li>Organisation</li>
+                    <li>Adaptabilité</li>
+                    <li>Esprit d’analyse</li>
+                    <li>Travail en équipe</li>
+                </ul>
+        </div>
+
+        <div class="tab-content" id="passions">
+            <ul>
+                    <li>Sport</li>
+                    <li>Dessin</li>
+                    <li>Voyages</li>
+                </ul>
+        </div>
+    
+    </div>
+        <!-- <div class="about-container">
             <div class="about-img">
                 <img src="img/photo-profile.png" class="img" alt="Photo de profil">
             </div>
@@ -100,7 +160,7 @@
                 <li>Dessin</li>
                 <li>Voyages</li>
             </ul>
-        </div>
+        </div> -->
                 
     </section>
      
@@ -160,7 +220,7 @@
        PROJECTS
 ============================================= -->
     <section id="projects">
-        <p class="section-title">Mes Travaux</p>
+        <p class="section-title">My Work</p>
         <h2 class="section-heading">Mes Projets</h2>
         <div class="divider"></div>
 

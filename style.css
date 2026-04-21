@@ -200,7 +200,82 @@ section {
        ABOUT SECTION
  ============================================= */
 
-.about-section {
+    .about-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* IMAGE FIXE À GAUCHE */
+
+.about-image {
+    flex-shrink: 0; /* empêche l’image de se réduire */
+}
+
+.about-image img {
+    width: 280px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: opacity 0.3s ease; 
+    
+}
+
+/* CONTENU À DROITE */
+.about-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* BOUTONS */
+.about-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    
+}
+
+.about-buttons .tab-btn {
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.08);
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.25s ease;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+/* CONTENU DES ONGLES */
+.tab-content {
+    display: none;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .about-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 220px;
+    }
+}
+/* .about-section {
     padding: 60px 20px;
     max-width: 900px;
     /* margin: 20px 55px 30px 100px;  */
@@ -209,16 +284,16 @@ section {
     align-items: center; 
     text-align: center;
      */
-}
+
 /*titre*/
-.title {
+/* .title {
     font-size: 40px;
     margin-bottom: 50px;
     color: gray; /* gray */
-    text-align: left;
-}
+    /* text-align: left;
+} */ 
 /*boutons*/
-.tabs{
+/* .tabs{
     display: flex;
     justify-content:center;
     align-items:center;
@@ -226,8 +301,8 @@ section {
     flex-wrap: nowrap; 
      margin: 20px 0px 0px 100px; 
 }
-.tabs .tab1{
-    margin:0px 10px 200px 10px;
+.tabs .tab1{ */
+    /* margin:0px 10px 200px 10px;
 }
 
 .tab-btn {
@@ -240,29 +315,29 @@ section {
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s ease;
-    box-sizing: border-box;
+    box-sizing: border-box; */
 
-}
+/* }
 .tab-btn .active{
     background: #abacae;
     color: #fff;
 }
 
 /* CONTENT */
-.tab-content{
+/* .tab-content{
     display:none;
     border-radius: 5px; 
-    animation:0.4s ease;
-}
+    animation:0.4s ease; */
 
 
-@keyframes fade {
+
+/* @keyframes fade {
     from { opacity: 0; }
     to { opacity: 1; }
-}
+} */ */
 
 /* ABOUT CONTAINER */
-.about-container {
+/* .about-container {
     display: flex;
     align-items: center;
     gap: 30px;
@@ -274,17 +349,17 @@ section {
    position: relative;
    width: 280px;
    margin-right: 35px;
-}
-.img {
+} */
+/* .img {
     width: 100%;
     border-radius: 12px;
     position: relative;
     border: 3px solid black;
     z-index: 3;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
+} */
 /* Rectangle 1 */
-.about-img::before {
+/* .about-img::before {
     content: "";
     position: absolute;
     top: -15px;
@@ -295,9 +370,9 @@ section {
     border-radius: 12px;
     transform: rotate(-5deg);
     z-index: 1;
-}
+} */
 /* Rectangle 2 */
-.about-img::after {
+/* .about-img::after {
     content: "";
     position: absolute;
     top: 15px;
@@ -308,20 +383,20 @@ section {
     border-radius: 12px;
     transform: rotate(5deg);
     z-index: 1;
-}
+} */
 
 
 /* TEXT */
-.about-container p {
+/* .about-container p {
     max-width: 500px;
     text-align: left;
     line-height: 1.7;
     color: #333;
     background-color: #abacae;
-}
+} */
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .about-container {
         flex-direction: column;
         text-align: center;
@@ -329,8 +404,8 @@ section {
 
     .about-container p {
         text-align: center;
-    }
-}
+    } */
+/* } */ 
 /* =============================================
        SKILLS SECTION
        Full-width white background to break the page
