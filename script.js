@@ -19,7 +19,6 @@ function checkVisibility() {
 
 const buttons = document.querySelectorAll(".tab-btn");
 const contents = document.querySelectorAll(".tab-content");
-const image = document.getElementById("about-img");
 
 buttons.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -34,16 +33,6 @@ buttons.forEach(btn => {
             c.classList.remove("active");
             if (c.id === tab) c.classList.add("active");
         });
-        // Change l'image avec un fade
-        const newImg = btn.getAttribute("data-img");
-
-        if (newImg) {
-            image.style.opacity = 0;
-
-            setTimeout(() => {
-                image.src = newImg;
-                image.style.opacity = 1;
-            }, 200);
-        }
+        
     });
 });

@@ -57,111 +57,77 @@
 
         <div class="about-wrapper">
 
-    <!-- IMAGE FIXE À GAUCHE -->
-        <div class="about-image">
-            <img id="about-img" src="img/photo-profile.png" alt="photo">
-        </div>
-
-    <!-- BOUTONS + CONTENU À DROITE -->
-    <div class="about-content">
-
-        <div class="btn-group about-buttons">
-            <button class="tab-btn active" data-tab="presentation" data-img="img/presentation">Présentation</button>
-            <button class="tab-btn" data-tab="langues" data-img="img/langues.jpg">Langues</button>
-            <button class="tab-btn" data-tab="softskills" data-img="img/softskills.jpg">Soft Skills</button>
-            <button class="tab-btn" data-tab="passions" data-img="img/passions.jpg">Passions</button>
-        </div>
-
-        <!-- CONTENUS -->
-        <div class="tab-content active" id="presentation">
-            <p>
-                    Étudiante en Bachelor Informatique & Développement, je me spécialise dans les systèmes,
-                    réseaux et le développement. Curieuse et passionnée, j’aime comprendre le fonctionnement
-                    des infrastructures, résoudre des incidents et créer des projets techniques pour monter
-                    en compétences.
-                    <br>
-                    Mon objectif est de devenir une professionnelle polyvalente, capable d’intervenir aussi
-                    bien sur le support, l’administration système que sur des projets de développement et
-                    d’automatisation.
-                </p>
-        </div>
-
-        <div class="tab-content" id="langues">
-            <ul>
-                    <li>Français — 85%</li>
-                    <li>Anglais — 85%</li>
-                    <li>Allemand — 25%</li>
-                </ul>
-        </div>
-
-        <div class="tab-content" id="softskills">
-            <ul>
-                    <li>Organisation</li>
-                    <li>Adaptabilité</li>
-                    <li>Esprit d’analyse</li>
-                    <li>Travail en équipe</li>
-                </ul>
-        </div>
-
-        <div class="tab-content" id="passions">
-            <ul>
-                    <li>Sport</li>
-                    <li>Dessin</li>
-                    <li>Voyages</li>
-                </ul>
-        </div>
-    
-    </div>
-        <!-- <div class="about-container">
-            <div class="about-img">
-                <img src="img/photo-profile.png" class="img" alt="Photo de profil">
+        <!-- IMAGE À GAUCHE -->
+            <div class="about-image">
+                <img id="about-img" src="img/photo-profile.png" alt="photo">
             </div>
-       
-            <div class="tabs">
-                <button class="tab-btn active" data-tab="presentation">Présentation</button>
-                <button class="tab-btn" data-tab="langues">Langues</button>
-                <button class="tab-btn" data-tab="softskills">Soft-skills</button>
-                <button class="tab-btn" data-tab="hobby">Centre-d'interets</button>
-            </div>  
-        </div>
-        <div class="tab-content active" id="presentation">
-             <p>
-                 Étudiante en Bachelor Informatique & Développement, je me spécialise dans les systèmes,
-                 réseaux et le développement. Curieuse et passionnée, j’aime comprendre le fonctionnement
-                 des infrastructures, résoudre des incidents et créer des projets techniques pour monter
-                 en compétences.
-                 <br>
-                 Mon objectif est de devenir une professionnelle polyvalente, capable d’intervenir aussi
-                 bien sur le support, l’administration système que sur des projets de développement et
-                 d’automatisation.
-             </p>
-        </div>
-             
-        <div class="tab-content" id="langues">
-            <ul>
-                <li>Français — 85%</li>
-                <li>Anglais — 85%</li>
-                <li>Allemand — 25%</li>
-            </ul>
+
+        <!-- BOUTONS + CONTENU À DROITE -->
+        <div class="about-content">
+
+            <!-- Les  boutons onglets -->
+
+            <div class="btn-group about-buttons">
+                <button class="tab-btn active" data-tab="presentation" data-img="img/photo-profile.png">Présentation</button>
+                <button class="tab-btn" data-tab="langues" data-img="img/photo-profile.png">Langues</button>
+                <button class="tab-btn" data-tab="softskills" data-img="img/photo-profile.png">Soft Skills</button>
+                <button class="tab-btn" data-tab="passions" data-img="img/photo-profile.png">Passions</button>
+            </div>
+
+            <!-- CONTENUS -->
+            <div class="tab-content active" id="presentation">
+                <p>
+                        Étudiante en Bachelor Informatique & Développement, je me spécialise dans les systèmes,
+                        réseaux et le développement. Curieuse et passionnée, j’aime comprendre le fonctionnement
+                        des infrastructures, résoudre des incidents et créer des projets techniques pour monter
+                        en compétences.
+                        <br><br>
+                        Mon objectif est de devenir une professionnelle polyvalente, capable d’intervenir aussi
+                        bien sur le support, l’administration système que sur des projets de développement et
+                        d’automatisation.
+                    </p>
+            </div>
+
+            <div class="tab-content" id="langues">
+                <div class="lang-bar">
+                    <span class="lang-name">Français</span>
+                    <div class="lang-track"><div class="lang-fill" style="width:85%"></div></div>
+                    <span class="lang-pct">85%</span>
+                </div>
+
+                <div class="lang-bar">
+                    <span class="lang-name">Anglais</span>
+                    <div class="lang-track"><div class="lang-fill" style="width:85%"></div></div>
+                    <span class="lang-pct">85%</span>
+                </div>
+
+                <div class="lang-bar">
+                    <span class="lang-name">Allemand</span>
+                    <div class="lang-track"><div class="lang-fill" style="width:25%"></div></div>
+                    <span class="lang-pct">25%</span>
+                </div>
+            </div>
+
+            <div class="tab-content" id="softskills">
+                <div class="tags-grid">
+                    <span class="about-tag">Organisation</span>
+                    <span class="about-tag">Adaptabilité</span>
+                    <!-- <span class="about-tag">Esprit d'analyse</span> -->
+                    <span class="about-tag">Travail en équipe</span>
+                </div>
+            </div>
+
+            <div class="tab-content" id="passions">
+                <div class="tags-grid">
+                    <span class="about-tag">Nouritures</span>
+                    <span class="about-tag">Dessin</span>
+                    <span class="about-tag">Voyages</span>
+                    <span class="about-tag">Musique</span>
+                </div>
+            </div>
+        
         </div>
 
-        <div class="tab-content" id="softskills">
-            <ul>
-                <li>Organisation</li>
-                <li>Adaptabilité</li>
-                <li>Esprit d’analyse</li>
-                <li>Travail en équipe</li>
-            </ul>
-        </div>
-
-        <div class="tab-content" id="hobby">
-            <ul>
-                <li>Sport</li>
-                <li>Dessin</li>
-                <li>Voyages</li>
-            </ul>
-        </div> -->
-                
     </section>
      
 <!-- =============================================
