@@ -67,7 +67,7 @@ portfolio/
 
 ## 📬 Contact
 
-- **Email :** yohanneivana@gmail.com
+- **Email :** yohanne********
 - **GitHub :** [github.com/yohanneivana-tech](https://github.com/yohanneivana-tech)
 - **LinkedIn :** [Yohanne Toukam](https://www.linkedin.com/feed/)
 
