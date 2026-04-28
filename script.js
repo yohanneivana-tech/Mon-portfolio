@@ -13,6 +13,9 @@ function checkVisibility() {
     });
 }
 
+window.addEventListener('scroll', checkVisibility);
+checkVisibility(); // vérifie au chargement
+
 /* ================================
    2 — ONGLET + IMAGE DYNAMIQUE
 ================================ */
@@ -36,3 +39,27 @@ buttons.forEach(btn => {
         
     });
 });
+
+/* ================================
+   3 — BURGER MENU MOBILE
+================================ */
+
+const toggle = document.getElementById('nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (toggle && navLinks) {
+
+    toggle.addEventListener('click', () => {
+        toggle.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+
+    // Ferme le menu quand on clique sur un lien
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            toggle.classList.remove('open');
+            navLinks.classList.remove('open');
+        });
+     });
+
+}    
