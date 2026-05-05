@@ -39,7 +39,7 @@ body {
 
  .nav-name {
     font-weight: 850;
-    font-size: 0.9rem;
+    font-size: 2.0rem;
     color: #1a1a1a;
     font-family:"Italianno", cursive;
     font-style: normal;
@@ -490,6 +490,152 @@ section {
     border-radius: 20px;
  }
 
+/* =============================================
+       CERTIFICATION SECTION
+============================================= */
+
+#certifications {
+    background: #f7f5f2;
+    max-width: 100%;
+    padding: 6rem 2rem;
+}
+
+.certif-inner {
+    max-width:900px;
+    margin:0 auto;
+}
+
+.certif-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:1.5rem;
+}
+
+/* la carte */
+.certif-card {
+    border-radius:14px;
+    border:1.5px solid #e8e4de;
+    overflow: hidden;
+    position: relative;
+    height: 220px;
+    cursor: default;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.certif-card:hover {
+    transform: translate(3px, -3px);
+    border-color:#e05c2e;
+}
+
+/* Logo visible par défaut */
+.card-logo {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    background: #ffffff;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    z-index:2;
+}
+
+.card-logo img {
+    width:100%;
+    height: 100%;
+    object-fit:cover; /* l'image remplit tout le carré */
+}
+
+/* Contenu caché par défaut */
+.card-info {
+    position:absolute;
+    inset:0;
+    background: #ffffff;
+    padding: 18px 16px 14px;
+    display:flex;
+    flex-direction:column;
+    opacity:0;
+    transform: translateY(8px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    z-index: 1;
+    border-left: 3px solid #e05c2e
+}
+
+/* Au survol : logo disparaît, contenu apparaît */
+.certif-card:hover .card-logo {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.certif-card:hover .card-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.certif-issuer {
+    font-size: 11px;
+    color:#e05c2e;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.certif-name {
+    font-size: 14px;
+    font-weight: 700;
+    color:#1a1a1a;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.cert-desc {
+    font-size: 12px;
+    color: #666;
+    line-height:1.6;
+    margin-bottom:10px;
+    flex: 1 ;
+}
+
+/* Boutons de téléchargement */
+.certif-files {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.file-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    font-weight: 600;
+    background: #f7f5f2;
+    border-radius: 20px;
+    color: #1a1a1a;
+    cursor: pointer;
+    text-decoration:none;
+    border: 1.5px solid #686161;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.file-btn:hover {
+    background: #e05c2e;
+    border-color:#e05c2e;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .certif-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 450px) {
+    .certif-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* =============================================
        PROJECTS SECTION
