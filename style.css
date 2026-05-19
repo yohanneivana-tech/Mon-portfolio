@@ -491,9 +491,17 @@ section {
  }
 
 /* =============================================
+       SÉPARATEUR ORANGE
+============================================= */
+.section-separator {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #e05c2e 20%, #e05c2e 80%, transparent);
+}
+
+/* =============================================
        CERTIFICATION SECTION
 ============================================= */
-
 #certifications {
     background: #f7f5f2;
     max-width: 100%;
@@ -501,30 +509,31 @@ section {
 }
 
 .certif-inner {
-    max-width:900px;
-    margin:0 auto;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .certif-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap:1.5rem;
+    gap: 1.5rem;
 }
 
-/* la carte */
+/* La carte */
 .certif-card {
-    border-radius:14px;
-    border:1.5px solid #e8e4de;
+    border-radius: 14px;
+    border: 1.5px solid #e8e4de;
     overflow: hidden;
     position: relative;
-    height: 220px;
+    height: 240px;
     cursor: default;
-    transition: transform 0.2s, border-color 0.2s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .certif-card:hover {
     transform: translate(3px, -3px);
-    border-color:#e05c2e;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+    border-color: #e05c2e;
 }
 
 /* Logo visible par défaut */
@@ -532,109 +541,158 @@ section {
     position: absolute;
     inset: 0;
     display: flex;
-    align-items:center;
-    justify-content:center;
+    align-items: center;
+    justify-content: center;
     background: #ffffff;
     transition: opacity 0.35s ease, transform 0.35s ease;
-    z-index:2;
+    z-index: 2;
 }
 
 .card-logo img {
-    width:100%;
+    width: 100%;
     height: 100%;
-    object-fit:cover; /* l'image remplit tout le carré */
+    object-fit: cover;
 }
 
-/* Contenu caché par défaut */
+/* Contenu caché par défaut — sans bordure gauche */
 .card-info {
-    position:absolute;
-    inset:0;
+    position: absolute;
+    inset: 0;
     background: #ffffff;
-    padding: 18px 16px 14px;
-    display:flex;
-    flex-direction:column;
-    opacity:0;
-    transform: translateY(8px);
+    padding: 20px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    opacity: 0;
+    transform: translateY(10px);
     transition: opacity 0.35s ease, transform 0.35s ease;
     z-index: 1;
-    border-left: 3px solid #e05c2e
+    overflow: hidden;
 }
 
-/* Au survol : logo disparaît, contenu apparaît */
+/* Au survol */
 .certif-card:hover .card-logo {
     opacity: 0;
     transform: scale(0.95);
+    pointer-events: none; /* ← empêche le logo de bloquer les clics */
 }
 
 .certif-card:hover .card-info {
     opacity: 1;
     transform: translateY(0);
+    z-index: 3; /* ← passe au-dessus du logo */
 }
 
 .certif-issuer {
-    font-size: 11px;
-    color:#e05c2e;
-    font-weight: 600;
-    letter-spacing: 0.06em;
+    font-size: 18px;
+    font-weight: 800;
+    color: #e05c2e;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    margin-bottom: 4px;
 }
 
 .certif-name {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
-    color:#1a1a1a;
-    margin-bottom: 6px;
-    line-height: 1.4;
+    color: #1a1a1a;
+    line-height: 1.50;
 }
 
-.cert-desc {
-    font-size: 12px;
-    color: #666;
-    line-height:1.6;
-    margin-bottom:10px;
-    flex: 1 ;
+.certif-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
-/* Boutons de téléchargement */
+/* Boutons */
 .certif-files {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
+    margin-top: auto;
 }
 
 .file-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 4px;
-    padding: 4px 10px;
+    padding: 5px 11px;
+    font-size: 11px;
     font-weight: 600;
-    background: #f7f5f2;
+    font-family: "Outfit", sans-serif;
+    background: #1a1a1a;
+    border: 1.5px solid #1a1a1a;
     border-radius: 20px;
-    color: #1a1a1a;
+    color: #fff;
     cursor: pointer;
-    text-decoration:none;
-    border: 1.5px solid #686161;
-    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
 }
 
 .file-btn:hover {
     background: #e05c2e;
-    border-color:#e05c2e;
-    color: #fff;
+    border-color: #e05c2e;
+    transform: translateY(-1px);
 }
+
+/* Dropdown CNIL */
+.certif-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 0;
+    background: #fffafa;
+    border: 1px solid #e0ddd8;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    padding: 6px;
+    display: none;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 200px;
+    z-index: 10;
+}
+
+.certif-dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #1a1a1a;
+    border-radius: 7px;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+    font-family: "Outfit", sans-serif;
+}
+
+.dropdown-item:hover {
+    background: #f7f5f2;
+    color: #e05c2e;
+}
+
 
 /* Responsive */
 @media (max-width: 700px) {
-    .certif-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+    .certif-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 450px) {
-    .certif-grid {
-        grid-template-columns: 1fr;
-    }
+    .certif-grid { grid-template-columns: 1fr; }
 }
 
 /* =============================================
