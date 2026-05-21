@@ -63,3 +63,20 @@ if (toggle && navLinks) {
      });
 
 }    
+/* ================================
+   CNIL — Liste des documents
+================================ */
+const cnilCard = document.getElementById('cnilCard');
+
+function openDocList() {
+    cnilCard.classList.add('list-open');
+}
+
+function closeDocList() {
+    cnilCard.classList.remove('list-open');
+}
+
+/* Quand le curseur quitte la carte → tout remet à zéro */
+cnilCard.addEventListener('mouseleave', function() {
+    cnilCard.classList.remove('list-open');
+});

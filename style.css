@@ -661,6 +661,113 @@ section {
     z-index: 10;
 }
 
+/* COUCHE 3 — liste des documents */
+.card-doclist {
+    position: absolute;
+    inset: 0;
+    background: #fff;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 3;
+}
+
+/* Quand list-open est actif */
+.certif-card.list-open .card-logo {
+    opacity: 0;
+    pointer-events: none;
+}
+.certif-card.list-open .card-info {
+    opacity: 0;
+    pointer-events: none;
+}
+.certif-card.list-open .card-doclist {
+    opacity: 1;
+    pointer-events: all;
+}
+/* Header de la liste */
+.doclist-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.doclist-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+.doclist-close {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: #f7f5f2;
+    border: 1px solid #e0ddd8;
+    font-size: 13px;
+    cursor: pointer;
+     display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s, color 0.15s;
+    color: #1a1a1a;
+}
+.doclist-close:hover { background: #e05c2e; color: #fff; border-color: #e05c2e; }
+
+/* Items de la liste */
+.doc-items { 
+    display: flex;
+    flex-direction: column; 
+    gap: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow-y: auto;      /* active le scroll vertical */
+    max-height: 170px;     /* hauteur max avant que le scroll apparaît */
+    padding-right: 4px;    /* évite que le scrollbar colle au bord */
+}
+
+/* Style de la barre de scroll */
+.doc-items::-webkit-scrollbar {
+    width: 4px;
+}
+
+.doc-items::-webkit-scrollbar-track {
+    background: #f0ece6;
+    border-radius: 4px;
+}
+
+.doc-items::-webkit-scrollbar-thumb {
+    background: #e05c2e;
+    border-radius: 4px;
+}
+
+.doc-items::-webkit-scrollbar-thumb:hover {
+    background: #c94d22;
+}
+
+.doc-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 10px;
+    background: #f7f5f2;
+    border: 1px solid #e8e4de;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 11.5px; font-weight: 500;
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+    
+}
+.doc-item:hover {
+    background: #fff3ee;
+    border-color: #e05c2e;
+    color: #e05c2e;
+    transform: translateX(3px);
+}
+.doc-icon { font-size: 14px; flex-shrink: 0; }
+.doc-name { flex: 1; }
+.doc-dl { font-size: 13px; opacity: 0.5; }
+.doc-item:hover .doc-dl { opacity: 1; }
+
 .certif-dropdown:hover .dropdown-menu {
     display: flex;
 }

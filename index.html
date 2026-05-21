@@ -214,45 +214,63 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- CNIL -->
+                <div class="certif-card" id="cnilCard">
 
-                <!-- CISCO -->
-                <div class="certif-card">
+                    <!-- COUCHE 1 : Logo -->
                     <div class="card-logo">
                         <img src="img/certif/img-cnil.png" alt="certif-CNIL">
                     </div>
+
+                    <!-- COUCHE 2 : Infos + boutons -->
                     <div class="card-info">
-                        <div class="certif-issuer">CNIL </div>
+                        <div class="certif-issuer">CNIL</div>
                         <div class="certif-name">Introduction au RGPD</div>
                         <p class="certif-desc">Introduction au RGPD, aux principes de protection des données personnelles, licéité, minimisation, droits des personnes, obligations, et aux bonnes pratiques de conformité.</p>
                         <div class="certif-files">
-
-                            <!-- Bouton avec liste déroulante -->
-                        <div class="certif-dropdown">
-                            <button class="file-btn">↓ Certificats ▾</button>
-                            <div class="dropdown-menu">
-
-                                <a href="Document/certificats/Certificat_cnil 1.pdf" download class="dropdown-item">
-                                    <span>📄</span> Module 1 
-                                </a>
-                                <a href="Document/certificats/Certificat_cnil 2.pdf" download class="dropdown-item">
-                                    <span>📄</span> Module 2 
-                                </a>
-                                <a href="Document/certificats/Certificat_cnil 3.pdf" download class="dropdown-item">
-                                    <span>📄</span> Module 3
-                                </a>
-                                <a href="Document/certificats/Certificat_cnil 4.pdf" download class="dropdown-item">
-                                    <span>📄</span> Module 4
-                                </a>
-                                <a href="Document/certificats/Certificat_cnil 5.pdf" download class="dropdown-item">
-                                    <span>📄</span> Module 5
-                                </a>
-                                <a href="Document/certificats/certificat_cnil 6.pdf" download class="dropdown-item">
-                                    <span>🏆</span> Attestation finale
-                                </a>
-                            </div>
-                        </div>
-
+                            <button class="file-btn" onclick="openDocList()">↓ Certificats ▾</button>
                             <a href="img/certif/badge/CNIL.jpg" download class="file-btn">↓ Badge</a>
+                        </div>
+                    </div>
+
+                    <!-- COUCHE 3 : Liste des documents (DANS la carte) -->
+                    <div class="card-doclist">
+                        <div class="doclist-header">
+                            <span class="doclist-title">📂 Choisir un document</span>
+                            <button class="doclist-close" onclick="closeDocList()">✕</button>
+                        </div>
+                        <div class="doc-items">
+                            <a href="Document/certificats/Certificat_cnil 1.pdf" download class="doc-item">
+                                <span class="doc-icon">📄</span>
+                                <span class="doc-name">Module 1</span>
+                                <span class="doc-dl">↓</span>
+                            </a>
+                            <a href="Document/certificats/Certificat_cnil 2.pdf" download class="doc-item">
+                                <span class="doc-icon">📄</span>
+                                <span class="doc-name">Module 2</span>
+                                <span class="doc-dl">↓</span>
+                            </a>
+                            <a href="Document/certificats/Certificat_cnil 3.pdf" download class="doc-item">
+                                <span class="doc-icon">📄</span>
+                                <span class="doc-name">Module 3</span>
+                                <span class="doc-dl">↓</span>
+                            </a>
+                            <a href="Document/certificats/Certificat_cnil 4.pdf" download class="doc-item">
+                                <span class="doc-icon">📄</span>
+                                <span class="doc-name">Module 4</span>
+                                <span class="doc-dl">↓</span>
+                            </a>
+                            <a href="Document/certificats/Certificat_cnil 5.pdf" download class="doc-item">
+                                <span class="doc-icon">📄</span>
+                                <span class="doc-name">Module 5</span>
+                                <span class="doc-dl">↓</span>
+                            </a>
+                            <a href="Document/certificats/certificat_cnil 6.pdf" download class="doc-item">
+                                <span class="doc-icon">🏆</span>
+                                <span class="doc-name">Attestation finale</span>
+                                <span class="doc-dl">↓</span>
+                            </a>
                         </div>
                     </div>
                 </div>
