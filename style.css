@@ -38,7 +38,7 @@ body {
  }
 
  .nav-name {
-    font-weight: 850;
+    font-weight: 650;
     font-size: 2.0rem;
     color: #1a1a1a;
     font-family:"Italianno", cursive;
@@ -878,6 +878,75 @@ section {
     color:#e05c2e;
     transform: translate(3px, -3px);
 }
+
+/*  Panneau Video  */
+.video-panel {
+    position :absolute; inset: 0;
+    background: #000;
+    display:flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.video-panel.open {
+    opacity:1;
+    pointer-events:all;
+}
+
+.video-header {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding:10px 14px;
+    background:rgba(0,0,0,0.8);
+}
+
+.video-title { color:fff; font-size:12px; font-weight:600;}
+
+.video-close {
+    width: 28px;
+    height:28px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    border: none;
+    color:#fff;
+    font-size:14px;
+    cursor: pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition: background 0.15s;
+}
+
+.video-close:hover {background: #e05c2e;}
+.video-container{
+    flex: 1;
+    background:#111;
+    overflow: hidden;
+}
+
+.video-container {
+    width: 100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/*bouton - demo*/
+.btn-video {
+    flex:1; display:flex; align-items:center; justify-content:center; gap:6px;
+    padding:9px 0;
+    background: #fff; color:#e05c2e;
+    border:1.5ps solid #e05c2e;
+    border-radius:8px;
+    font-size: 0.82rem; font-weight:600;
+    cursor: pointer; font-family: "Outfit", sans-serif;
+    transition:background 0.2s, color 0.2s;
+}
+
+.btn-video:hover { background:#e05c2e; color:#fff;}
 
 
 /* =============================================
