@@ -19,9 +19,9 @@
             <ul class="nav-links">
                 <li><a href="#about">À propos</a></li>
                 <li><a href="#skills">Compétences</a></li>
-                <li><a href="#Certifications">certifications</a></li>
+                <li><a href="#Certifications">certifs</a></li>
                 <li><a href="#projects">Projets</a></li>
-                <li><a href="#Rapport">Rapport-Stage</a></li>
+                <li><a href="#Rapport">R-Stage</a></li>
                 <li><a href="#contacts">Contacts</a></li>
             </ul>
 
@@ -303,76 +303,156 @@
 <!-- =============================================
        PROJECTS
 ============================================= -->
-    <section id="projects">
-        <p class="section-title">My Work</p>
-        <h2 class="section-heading">Mes Projets</h2>
-        <div class="divider"></div>
+<section id="projects">
+    <p class="section-title">My Work</p>
+    <h2 class="section-heading">Mes Projets</h2>
+    <div class="divider"></div>
 
-        <div class="projects-grid reveal">
+    <div class="projects-grid reveal">
 
-            <a class="project-card" href="https://github.com/yohanneivana-tech/Projet-AEGIS" target="_blank">
+        <!-- ══ PROJET 1 : AEGIS ══ -->
+        <div class="project-card" id="card-aegis">
+
+            <!-- Contenu normal de la carte -->
+            <div class="card-content">
                 <span class="project-arrow">↗</span>
                 <div class="project-num">Project 01</div>
-                <h3> AEGIS</h3>
-                <p> AEGIS est une solution complète destinée à TechSud, intégrant gestion centralisée, optimisation réseau et outils d’administration pour une infrastructure plus performante et sur tout plus securiser.</p>
-                
+                <h3>AEGIS</h3>
+                <p>AEGIS est une solution complète destinée à TechSud, intégrant gestion centralisée, optimisation réseau et outils d'administration pour une infrastructure plus sécurisée.</p>
                 <div class="project-tech">
                     <span class="tech-tag">VM-KALI</span>
-                     <span class="tech-tag">Hydra</span>
+                    <span class="tech-tag">Hydra</span>
                     <span class="tech-tag">script-python3</span>
                     <span class="tech-tag">SSH/Fail2ban/Nmap</span>
                 </div>
-            </a>
+                <div class="project-btns">
+                    <a href="https://github.com/yohanneivana-tech/Projet-AEGIS" target="_blank" class="btn-github">GitHub ↗</a>
+                    <button class="btn-slider" onclick="ouvrirSlider('aegis')">⊞ Slider</button>
+                </div>
+            </div>
 
-            <a class="project-card" href="https://github.com/yohanneivana-tech/Mini-projet-javascript" target="_blank">
+            <!-- Panneau slider — caché par défaut -->
+            <div class="card-slider" id="slider-aegis">
+
+                <!-- Bouton retour -->
+                <button class="btn-retour" onclick="fermerSlider('aegis')">← Retour</button>
+
+                <!-- Les images -->
+                <div class="slider-images" id="images-aegis">
+                    <img class="slide-img active" src="img/projects/aegis-1.png" alt="AEGIS scan">
+                    <img class="slide-img" src="img/projects/aegis-2.png" alt="AEGIS Hydra">
+                    <img class="slide-img" src="img/projects/aegis-3.png" alt="AEGIS rapport">
+                </div>
+
+                <!-- Flèches de navigation -->
+                <div class="slider-nav">
+                    <button onclick="slidePrec('aegis')">←</button>
+                    <span class="slide-compteur" id="compteur-aegis">1 / 3</span>
+                    <button onclick="slideSuiv('aegis')">→</button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- ══ PROJET 2 : JEU HÉROS ══ -->
+        <div class="project-card" id="card-jeu">
+
+            <div class="card-content">
                 <span class="project-arrow">↗</span>
                 <div class="project-num">Project 02</div>
                 <h3>Jeu-dont-vous-etes-le-hero</h3>
-                <p> Ce jeu consiste à plonger le joueur dans une aventure interactive où chaque choix influence le déroulement de l’histoire.
-                    Inspiré du concept « Jeu dont vous êtes le héros », le script permet au joueur de prendre des décisions, d’explorer différents 
-                    chemins et de découvrir plusieurs fins possibles selon ses actions.</p>
-                
+                <p>Aventure interactive où chaque choix influence le déroulement de l'histoire. Plusieurs fins possibles selon vos décisions.</p>
                 <div class="project-tech">
                     <span class="tech-tag">JavaScript</span>
                     <span class="tech-tag">HTML</span>
                     <span class="tech-tag">CSS</span>
                 </div>
-            </a>
+                <div class="project-btns">
+                    <a href="https://github.com/yohanneivana-tech/Mini-projet-javascript" target="_blank" class="btn-github">GitHub ↗</a>
+                    <button class="btn-slider" onclick="ouvrirSlider('jeu')">⊞ Slider</button>
+                </div>
+            </div>
 
-            <a class="project-card" href="https://github.com/yohanneivana-tech/CLONE-site_web_burger_king" target="_blank">
+            <div class="card-slider" id="slider-jeu">
+                <button class="btn-retour" onclick="fermerSlider('jeu')">← Retour</button>
+                <div class="slider-images" id="images-jeu">
+                    <img class="slide-img active" src="img/projects/jeu-1.png" alt="Jeu écran 1">
+                    <img class="slide-img" src="img/projects/jeu-2.png" alt="Jeu écran 2">
+                </div>
+                <div class="slider-nav">
+                    <button onclick="slidePrec('jeu')">←</button>
+                    <span class="slide-compteur" id="compteur-jeu">1 / 2</span>
+                    <button onclick="slideSuiv('jeu')">→</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ══ PROJET 3 : BURGER KING (slider + vidéo) ══ -->
+        <div class="project-card" id="card-bk">
+
+            <div class="card-content">
                 <span class="project-arrow">↗</span>
                 <div class="project-num">Project 03</div>
                 <h3>CLONE-site_web_burger_king</h3>
-                <p>Ce mini‑projet consiste à recréer l’interface du site Burger King en utilisant HTML et CSS. L’objectif était de reproduire la mise en page,les couleurs et l’apparence générale du site officiel dans un but purement pédagogique, afin de pratiquer la structuration d’une page web et la mise en forme visuelle.</p>
-                
+                <p>Reproduction du site Burger King (2015) — mise en page, couleurs, interactions et version responsive.</p>
                 <div class="project-tech">
                     <span class="tech-tag">HTML</span>
                     <span class="tech-tag">CSS</span>
                     <span class="tech-tag">JavaScript</span>
                 </div>
-
-                <div class="video-container">
-                    <video id="vid-bk" controls preload="none" poster="img/projects/bk-thumb.jpg">
-                        <source src="video/burger-king.mp4" type="video/mp4">
-                    </video>
+                <div class="project-btns">
+                    <a href="https://github.com/yohanneivana-tech/CLONE-site_web_burger_king" target="_blank" class="btn-github">GitHub ↗</a>
+                    <button class="btn-slider" onclick="ouvrirSlider('bk')">⊞ Slider</button>
+                    <button class="btn-video" onclick="ouvrirVideo('bk')">▶ Démo</button>
                 </div>
-            </a>
+            </div>
 
-            <a class="project-card" href="#" target="_blank">
+            <!-- Panneau slider BK -->
+            <div class="card-slider" id="slider-bk">
+                <button class="btn-retour" onclick="fermerSlider('bk')">← Retour</button>
+                <div class="slider-images" id="images-bk">
+                    <img class="slide-img active" src="img/projects/bk-1.png" alt="BK desktop">
+                    <img class="slide-img" src="img/projects/bk-2.png" alt="BK mobile">
+                </div>
+                <div class="slider-nav">
+                    <button onclick="slidePrec('bk')">←</button>
+                    <span class="slide-compteur" id="compteur-bk">1 / 2</span>
+                    <button onclick="slideSuiv('bk')">→</button>
+                </div>
+            </div>
+
+            <!-- Panneau vidéo BK -->
+            <div class="card-video" id="video-bk">
+                <button class="btn-retour" onclick="fermerVideo('bk')">← Retour</button>
+                <video controls preload="none" poster="img/projects/bk-thumb.jpg">
+                    <source src="video/Burger-King1.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+
+        <!-- ══ PROJET 4 ══ -->
+        <div class="project-card" id="card-p4">
+            <div class="card-content">
                 <span class="project-arrow">↗</span>
                 <div class="project-num">Project 04</div>
-                <h3> Fourth project</h3>
-                <p> A short description of what this project does and what problem it solves</p>
-                
+                <h3>Fourth project</h3>
+                <p>A short description of what this project does and what problem it solves.</p>
                 <div class="project-tech">
                     <span class="tech-tag">React</span>
                     <span class="tech-tag">python</span>
                     <span class="tech-tag">Flask</span>
                 </div>
-            </a>
+                <div class="project-btns">
+                    <a href="#" class="btn-github">GitHub ↗</a>
+                </div>
+            </div>
         </div>
-    </section>
-        
+
+    </div>
+</section>
 
 <!-- =============================================
        CONTACT

@@ -38,15 +38,15 @@ body {
  }
 
  .nav-name {
-    font-weight: 650;
-    font-size: 2.0rem;
+    font-weight: 600;
+    font-size: 1.5rem;
     color: #1a1a1a;
     font-family:"Italianno", cursive;
     font-style: normal;
  }
  .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.3rem;
     list-style: none; /* removes bullet points */
     font-weight: 600;
  }
@@ -805,67 +805,75 @@ section {
 /* =============================================
        PROJECTS SECTION
 ============================================= */
-
 .projects-grid {
-    display:grid;
-    grid-template-columns: 1fr 1fr; /*columns*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
 }
 
+/* La carte — position relative pour que les panneaux
+   puissent se superposer par-dessus */
 .project-card {
-    background:white;
+    background: white;
     border-radius: 16px;
-    padding: 2rem;
-    border:1.5px solid #e8e4de;
+    border: 1.5px solid #e8e4de;
     text-decoration: none;
-    color:inherit;
-    display: block;
-    transition:transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+    min-height: 260px;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
 
 .project-card:hover {
     transform: translateY(-4px);
-    box-shadow:0 12px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
     border-color: #e05c2e;
 }
 
-.project-num {
-    font: size 0.75rem;
-    color:#e05c2e;
-    font-weight: 700;
-    letter-spacing:0.1em;
-    margin-bottom:0.75rem;
+/* Contenu normal de la carte */
+.card-content {
+    padding: 2rem;
 }
 
-.project-card h3{
-    font-size:1.2rem;
+.project-num {
+    font-size: 0.75rem;
+    color: #e05c2e;
     font-weight: 700;
-    margin-bottom:0.5rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
 }
 
 .project-card p {
-    color:#686161;
+    color: #686161;
     font-size: 0.9rem;
     margin-bottom: 1.25rem;
+    line-height: 1.6;
 }
 
 .project-tech {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
+    margin-bottom: 1.25rem;
 }
 
 .tech-tag {
     background: #f0ece6;
-    color:#555;
-    font-size:0.78rem;
-    padding:3px 10px;
+    color: #555;
+    font-size: 0.78rem;
+    padding: 3px 10px;
     border-radius: 25px;
     font-weight: 500;
 }
 
-/* Arrow in the top-right corner*/
-
+/* Flèche en haut à droite */
 .project-arrow {
     float: right;
     font-size: 1.8rem;
@@ -875,79 +883,173 @@ section {
 }
 
 .project-card:hover .project-arrow {
-    color:#e05c2e;
+    color: #e05c2e;
     transform: translate(3px, -3px);
 }
 
-/*  Panneau Video  */
-.video-panel {
-    position :absolute; inset: 0;
-    background: #000;
-    display:flex;
-    flex-direction: column;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 10;
-}
-
-.video-panel.open {
-    opacity:1;
-    pointer-events:all;
-}
-
-.video-header {
+/* Boutons en bas de la carte */
+.project-btns {
     display: flex;
-    align-items: center;
-    justify-content:space-between;
-    padding:10px 14px;
-    background:rgba(0,0,0,0.8);
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
-.video-title { color:fff; font-size:12px; font-weight:600;}
+.btn-github {
+    padding: 8px 16px;
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition: background 0.2s;
+}
 
-.video-close {
-    width: 28px;
-    height:28px;
-    border-radius:50%;
-    background:rgba(255,255,255,0.15);
-    border: none;
-    color:#fff;
-    font-size:14px;
+.btn-github:hover { background: #333; }
+
+.btn-slider {
+    padding: 8px 16px;
+    background: #fff;
+    color: #e05c2e;
+    border: 1.5px solid #e05c2e;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
     cursor: pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    transition: background 0.15s;
+    font-family: "Outfit", sans-serif;
+    transition: background 0.2s, color 0.2s;
 }
 
-.video-close:hover {background: #e05c2e;}
-.video-container{
+.btn-slider:hover { background: #e05c2e; color: #fff; }
+
+.btn-video {
+    padding: 8px 16px;
+    background: #fff;
+    color: #1a1a1a;
+    border: 1.5px solid #1a1a1a;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: "Outfit", sans-serif;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-video:hover { background: #1a1a1a; color: #fff; }
+
+/* =============================================
+   PANNEAU SLIDER
+   Position absolute = il se pose par-dessus
+   la carte. display:none = caché par défaut.
+============================================= */
+.card-slider {
+    position: absolute;
+    inset: 0; /* couvre toute la carte */
+    background: #111;
+    display: none; /* caché par défaut */
+    flex-direction: column;
+}
+
+/* Quand JS ajoute la classe "ouvert" → visible */
+.card-slider.ouvert {
+    display: flex;
+}
+
+/* Bouton retour en haut du panneau */
+.btn-retour {
+    padding: 8px 14px;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: "Outfit", sans-serif;
+    text-align: left;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+.btn-retour:hover { background: #e05c2e; }
+
+/* Zone des images — prend tout l'espace restant */
+.slider-images {
     flex: 1;
-    background:#111;
+    position: relative;
     overflow: hidden;
 }
 
-.video-container {
+/* Chaque image est cachée par défaut */
+.slide-img {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height:100%;
-    object-fit:cover;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
-/*bouton - demo*/
-.btn-video {
-    flex:1; display:flex; align-items:center; justify-content:center; gap:6px;
-    padding:9px 0;
-    background: #fff; color:#e05c2e;
-    border:1.5ps solid #e05c2e;
-    border-radius:8px;
-    font-size: 0.82rem; font-weight:600;
-    cursor: pointer; font-family: "Outfit", sans-serif;
-    transition:background 0.2s, color 0.2s;
+/* Seule l'image active est visible */
+.slide-img.active { opacity: 1; }
+
+/* Barre de navigation : flèches + compteur */
+.slider-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 10px;
+    background: rgba(0,0,0,0.6);
+    flex-shrink: 0;
 }
 
-.btn-video:hover { background:#e05c2e; color:#fff;}
+.slider-nav button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
 
+.slider-nav button:hover { background: #e05c2e; }
+
+.slide-compteur {
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 600;
+    min-width: 40px;
+    text-align: center;
+}
+
+/* =============================================
+   PANNEAU VIDÉO
+   Même principe que le slider
+============================================= */
+.card-video {
+    position: absolute;
+    inset: 0;
+    background: #000;
+    display: none;
+    flex-direction: column;
+}
+
+.card-video.ouvert { display: flex; }
+
+.card-video video {
+    flex: 1;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .projects-grid { grid-template-columns: 1fr; }
+}
 
 /* =============================================
        CONTACT SECTION — dark background

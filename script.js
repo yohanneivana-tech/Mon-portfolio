@@ -1,3 +1,4 @@
+
 /* ================================
    1 — ANIMATION REVEAL AU SCROLL
 ================================ */
@@ -13,15 +14,17 @@ function checkVisibility() {
     });
 }
 
+// Lance la vérification au scroll et au chargement de la page
 window.addEventListener('scroll', checkVisibility);
-checkVisibility(); // vérifie au chargement
+window.addEventListener('load', checkVisibility);
 
 /* ================================
-   2 — ONGLET + IMAGE DYNAMIQUE
+   2 — ONGLETS + IMAGE DYNAMIQUE
 ================================ */
 
 const buttons = document.querySelectorAll(".tab-btn");
 const contents = document.querySelectorAll(".tab-content");
+const image = document.getElementById("about-img");
 
 buttons.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -36,47 +39,100 @@ buttons.forEach(btn => {
             c.classList.remove("active");
             if (c.id === tab) c.classList.add("active");
         });
-        
+
+        // Change l'image avec un fade
+        const newImg = btn.getAttribute("data-img");
+        if (newImg && image) {
+            image.style.opacity = 0;
+            setTimeout(() => {
+                image.src = newImg;
+                image.style.opacity = 1;
+            }, 200);
+        }
     });
 });
 
 /* ================================
-   3 — BURGER MENU MOBILE
+   PROJETS — Slider
 ================================ */
 
-const toggle = document.getElementById('nav-toggle');
-const navLinks = document.querySelector('.nav-links');
+/* Stocke le numéro de l'image actuelle pour chaque projet */
+var indexSlider = {};
 
-if (toggle && navLinks) {
+/* Ouvre le slider d'un projet */
+function ouvrirSlider(id) {
+    document.getElementById('slider-' + id).classList.add('ouvert');
+    /* Ferme la vidéo si elle est ouverte */
+    var panneau = document.getElementById('video-' + id);
+    if (panneau) panneau.classList.remove('ouvert');
+}
 
-    toggle.addEventListener('click', () => {
-        toggle.classList.toggle('open');
-        navLinks.classList.toggle('open');
+/* Ferme le slider */
+function fermerSlider(id) {
+    document.getElementById('slider-' + id).classList.remove('ouvert');
+}
+
+/* Va à une image précise (par numéro) */
+function allerA(id, numero) {
+    var images = document.querySelectorAll('#images-' + id + ' .slide-img');
+    var total = images.length;
+
+    /* Boucle si on dépasse la fin ou le début */
+    if (numero >= total) numero = 0;
+    if (numero < 0) numero = total - 1;
+
+    /* Cache toutes les images */
+    images.forEach(function(img) {
+        img.classList.remove('active');
     });
 
-    // Ferme le menu quand on clique sur un lien
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            toggle.classList.remove('open');
-            navLinks.classList.remove('open');
-        });
-     });
+    /* Affiche seulement celle choisie */
+    images[numero].classList.add('active');
 
-}    
+    /* Met à jour le compteur ex: "2 / 3" */
+    document.getElementById('compteur-' + id).textContent = (numero + 1) + ' / ' + total;
+
+    /* Sauvegarde l'index actuel */
+    indexSlider[id] = numero;
+}
+
+/* Image suivante */
+function slideSuiv(id) {
+    var actuel = indexSlider[id] || 0;
+    allerA(id, actuel + 1);
+}
+
+/* Image précédente */
+function slidePrec(id) {
+    var actuel = indexSlider[id] || 0;
+    allerA(id, actuel - 1);
+}
+
 /* ================================
-   CNIL — Liste des documents
+   PROJETS — Vidéo (BK seulement)
 ================================ */
-const cnilCard = document.getElementById('cnilCard');
 
-function openDocList() {
-    cnilCard.classList.add('list-open');
+function ouvrirVideo(id) {
+    document.getElementById('video-' + id).classList.add('ouvert');
+    /* Ferme le slider si ouvert */
+    document.getElementById('slider-' + id).classList.remove('ouvert');
 }
 
-function closeDocList() {
-    cnilCard.classList.remove('list-open');
+function fermerVideo(id) {
+    var panneau = document.getElementById('video-' + id);
+    panneau.classList.remove('ouvert');
+    /* Met la vidéo en pause */
+    var vid = panneau.querySelector('video');
+    if (vid) vid.pause();
 }
 
-/* Quand le curseur quitte la carte → tout remet à zéro */
-cnilCard.addEventListener('mouseleave', function() {
-    cnilCard.classList.remove('list-open');
+/* Touche Échap pour tout fermer */
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.card-slider.ouvert, .card-video.ouvert').forEach(function(p) {
+            p.classList.remove('ouvert');
+            var vid = p.querySelector('video');
+            if (vid) vid.pause();
+        });
+    }
 });
