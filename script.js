@@ -9,7 +9,7 @@ function checkVisibility() {
     revealElements.forEach(function(element) {
         const position = element.getBoundingClientRect();
         if (position.top < window.innerHeight - 80) {
-            element.classList.add('Visible');
+            element.classList.add('visible');
         }
     });
 }
@@ -40,17 +40,28 @@ buttons.forEach(btn => {
             if (c.id === tab) c.classList.add("active");
         });
 
-        // Change l'image avec un fade
-        const newImg = btn.getAttribute("data-img");
-        if (newImg && image) {
-            image.style.opacity = 0;
-            setTimeout(() => {
-                image.src = newImg;
-                image.style.opacity = 1;
-            }, 200);
-        }
     });
 });
+
+/* ================================
+   CNIL — Liste des documents
+================================ */
+
+function openDocList(cardId) {
+    document.getElementById(cardId).classList.add('list-open');
+}
+
+function closeDocList(cardId) {
+    document.getElementById(cardId).classList.remove('list-open');
+}
+
+/* Quand le curseur quitte la carte → tout remet à zéro */
+const cnilCard = document.getElementById('cnilCard');
+if (cnilCard) {
+    cnilCard.addEventListener('mouseleave', function() {
+        cnilCard.classList.remove('list-open');
+    });
+}
 
 /* ================================
    PROJETS — Slider

@@ -22,7 +22,7 @@
                 <li><a href="#Certifications">certifs</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#Rapport">R-Stage</a></li>
-                <li><a href="#contacts">Contacts</a></li>
+                <li><a href="#contact">Contacts</a></li>
             </ul>
 
             <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
@@ -76,10 +76,10 @@
             <!-- Les  boutons onglets -->
 
             <div class="btn-group about-buttons">
-                <button class="tab-btn active" data-tab="presentation" data-img="img/photo-profile.png">Présentation</button>
-                <button class="tab-btn" data-tab="langues" data-img="img/photo-profile.png">Langues</button>
-                <button class="tab-btn" data-tab="softskills" data-img="img/photo-profile.png">Soft Skills</button>
-                <button class="tab-btn" data-tab="passions" data-img="img/photo-profile.png">Passions</button>
+                <button class="tab-btn active" data-tab="presentation" >Présentation</button>
+                <button class="tab-btn" data-tab="langues" >Langues</button>
+                <button class="tab-btn" data-tab="softskills" >Soft Skills</button>
+                <button class="tab-btn" data-tab="passions" >Passions</button>
             </div>
 
             <!-- CONTENUS -->
@@ -116,18 +116,18 @@
                 </div>
             </div>
 
-            <div class="tab-content" id="softskills">
+            <!-- <div class="tab-content" id="softskills">
                 <div class="tags-grid">
                     <span class="about-tag">Organisation</span>
                     <span class="about-tag">Adaptabilité</span>
-                    <!-- <span class="about-tag">Esprit d'analyse</span> -->
-                    <span class="about-tag">Travail en équipe</span>
+                     <span class="about-tag">Esprit d'analyse</span> -->
+                    <!-- <span class="about-tag">Travail en équipe</span>
                 </div>
-            </div>
+            </div> --> 
 
             <div class="tab-content" id="passions">
                 <div class="tags-grid">
-                    <span class="about-tag">Nouritures</span>
+                    <span class="about-tag">Travaill en equipe</span>
                     <span class="about-tag">Dessin</span>
                     <span class="about-tag">Voyages</span>
                     <span class="about-tag">Musique</span>
@@ -151,8 +151,11 @@
             <div class="skills-grid reveal">
 
                 <div class="skill-card">
-                    <div class="skill-icon">🌐</div>
-                    <h3>Dévelopement Full-stack</h3>
+                    <div class="skill-heading">
+                        <div class="skill-icon">🌐</div>
+                        <h3>Dévelopement Full-stack</h3>
+                    </div>
+
                     <div class="skill-list">
                         <span class="skill-tag">HTML</span>
                         <span class="skill-tag">CSS</span>
@@ -164,8 +167,11 @@
                 </div>
 
                 <div class="skill-card">
-                    <div class="skill-icon">⚙️</div>
-                    <h3>système & Réseau</h3>
+                    <div class="skill-heading">
+                        <div class="skill-icon">⚙️</div>
+                        <h3>système & Réseau</h3>
+                    </div>
+
                     <div class="skill-list">
                         <span class="skill-tag">Window Server</span>
                         <span class="skill-tag">Linux Server</span>
@@ -175,14 +181,32 @@
                 </div>
 
                 <div class="skill-card">
-                    <div class="skill-icon">🛠️</div>
-                    <h3>Outils</h3>
+                    <div class="skill-heading">
+                        <div class="skill-icon">🛠️</div>
+                        <h3>Outils</h3>
+                    </div>
+
                     <div class="skill-list">
                         <span class="skill-tag">VMware</span>
                         <span class="skill-tag">VS Code</span>
                         <span class="skill-tag">Git/GitHub</span>
                         <span class="skill-tag">Virtual Box</span>
                         <span class="skill-tag">Cisco-Packet Tracer</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-heading">
+                        <div class="skill-icon">🧠</div>
+                        <h3>softskills</h3>
+                    </div>
+
+                    <div class="skill-list">
+                        <span class="skill-tag">Autonomie</span>
+                        <span class="skill-tag">Travail en equipe</span>
+                        <span class="skill-tag">Curiosité techniques</span>
+                        <span class="skill-tag">Gestion du stress</span>
+                        <span class="skill-tag">Sense du services</span>
                     </div>
                 </div>
 
@@ -231,7 +255,8 @@
                         <div class="certif-name">Introduction au RGPD</div>
                         <p class="certif-desc">Introduction au RGPD, aux principes de protection des données personnelles, licéité, minimisation, droits des personnes, obligations, et aux bonnes pratiques de conformité.</p>
                         <div class="certif-files">
-                            <button class="file-btn" onclick="openDocList()">↓ Certificats ▾</button>
+                            <button class="file-btn" onclick="openDocList('cnilCard')">↓ Certificats ▾</button>
+                            
                             <a href="img/certif/badge/CNIL.jpg" download class="file-btn">↓ Badge</a>
                         </div>
                     </div>
@@ -240,7 +265,7 @@
                     <div class="card-doclist">
                         <div class="doclist-header">
                             <span class="doclist-title">📂 Choisir un document</span>
-                            <button class="doclist-close" onclick="closeDocList()">✕</button>
+                            <button class="doclist-close" onclick="closeDocList('cnilCard')">✕</button>
                         </div>
                         <div class="doc-items">
                             <a href="Document/certificats/Certificat_cnil 1.pdf" download class="doc-item">
@@ -313,7 +338,6 @@
         <!-- ══ PROJET 1 : AEGIS ══ -->
         <div class="project-card" id="card-aegis">
 
-            <!-- Contenu normal de la carte -->
             <div class="card-content">
                 <span class="project-arrow">↗</span>
                 <div class="project-num">Project 01</div>
@@ -331,26 +355,18 @@
                 </div>
             </div>
 
-            <!-- Panneau slider — caché par défaut -->
             <div class="card-slider" id="slider-aegis">
-
-                <!-- Bouton retour -->
                 <button class="btn-retour" onclick="fermerSlider('aegis')">← Retour</button>
-
-                <!-- Les images -->
                 <div class="slider-images" id="images-aegis">
                     <img class="slide-img active" src="img/projects/aegis-1.png" alt="AEGIS scan">
                     <img class="slide-img" src="img/projects/aegis-2.png" alt="AEGIS Hydra">
                     <img class="slide-img" src="img/projects/aegis-3.png" alt="AEGIS rapport">
                 </div>
-
-                <!-- Flèches de navigation -->
                 <div class="slider-nav">
                     <button onclick="slidePrec('aegis')">←</button>
                     <span class="slide-compteur" id="compteur-aegis">1 / 3</span>
                     <button onclick="slideSuiv('aegis')">→</button>
                 </div>
-
             </div>
         </div>
 
@@ -389,7 +405,7 @@
         </div>
 
 
-        <!-- ══ PROJET 3 : BURGER KING (slider + vidéo) ══ -->
+        <!-- ══ PROJET 3 : BURGER KING ══ -->
         <div class="project-card" id="card-bk">
 
             <div class="card-content">
@@ -405,32 +421,29 @@
                 <div class="project-btns">
                     <a href="https://github.com/yohanneivana-tech/CLONE-site_web_burger_king" target="_blank" class="btn-github">GitHub ↗</a>
                     <button class="btn-slider" onclick="ouvrirSlider('bk')">⊞ Slider</button>
-                    <button class="btn-video" onclick="ouvrirVideo('bk')">▶ Démo</button>
                 </div>
+                <!-- ↑ il manquait ce </div> pour fermer .project-btns -->
             </div>
+            <!-- ↑ il manquait ce </div> pour fermer .card-content -->
 
             <!-- Panneau slider BK -->
             <div class="card-slider" id="slider-bk">
                 <button class="btn-retour" onclick="fermerSlider('bk')">← Retour</button>
                 <div class="slider-images" id="images-bk">
-                    <img class="slide-img active" src="img/projects/bk-1.png" alt="BK desktop">
-                    <img class="slide-img" src="img/projects/bk-2.png" alt="BK mobile">
+                    <img class="slide-img active" src="img/project/bk-img-1.png" alt="BK mobile">
+                    <img class="slide-img" src="img/project/bk-img-2.png" alt="BK desktop">
+                    <img class="slide-img" src="img/project/bk-img-3.png" alt="BK desktop">
+                    <img class="slide-img" src="img/project/bk-img-4.png" alt="BK desktop">
+                    <img class="slide-img" src="img/project/bk-img-5.png" alt="BK desktop">
                 </div>
                 <div class="slider-nav">
                     <button onclick="slidePrec('bk')">←</button>
-                    <span class="slide-compteur" id="compteur-bk">1 / 2</span>
+                    <span class="slide-compteur" id="compteur-bk">1 / 5</span>
                     <button onclick="slideSuiv('bk')">→</button>
                 </div>
             </div>
-
-            <!-- Panneau vidéo BK -->
-            <div class="card-video" id="video-bk">
-                <button class="btn-retour" onclick="fermerVideo('bk')">← Retour</button>
-                <video controls preload="none" poster="img/projects/bk-thumb.jpg">
-                    <source src="video/Burger-King1.mp4" type="video/mp4">
-                </video>
-            </div>
         </div>
+        <!-- ↑ il manquait ce </div> pour fermer .project-card de BK -->
 
 
         <!-- ══ PROJET 4 ══ -->
@@ -453,7 +466,6 @@
 
     </div>
 </section>
-
 <!-- =============================================
        CONTACT
 ============================================= -->
