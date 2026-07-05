@@ -369,7 +369,7 @@ section {
 }
 
 .about-tag:hover {
-     border-color: #161615;
+     border-color: #e05c2e;
     color: #e05c2e; 
     transform: translate(3px, -3px);
 }
@@ -408,6 +408,74 @@ section {
     width:36px;
     text-align:right;
 }
+
+/* --- FORMATIONS --- */
+.formation-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid #e05c2e;
+}
+
+.formation-item:last-child {
+    border-bottom: none;
+}
+
+.formation-annee {
+    font-size: 13px;
+    font-weight: 700;
+    color: #e05c2e;
+    background: #fff3ee;
+    padding: 3px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.formation-titre {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 2px;
+}
+
+.formation-ecole {
+    font-size: 13px;
+    color: #777;
+}
+
+/* --- OBJECTIFS --- */
+.objectif-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 0.7px solid #301b13;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.objectif-item:last-child {
+    border-bottom: none;
+}
+
+.objectif-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.objectif-label {
+    color: #e05c2e;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-right: 6px;
+}
+
 
 /* --- RESPONSIVE ABOUT --- */
 @media (max-width:700px){
@@ -782,31 +850,6 @@ section {
 .doc-name { flex: 1; }
 .doc-dl { font-size: 13px; opacity: 0.5; }
 .doc-item:hover .doc-dl { opacity: 1; }
-
-/* .certif-dropdown:hover .dropdown-menu {
-    display: flex;
-}
-
-.dropdown-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 10px;
-    font-size: 11px;
-    font-weight: 500;
-    color: #1a1a1a;
-    border-radius: 7px;
-    text-decoration: none;
-    transition: background 0.15s, color 0.15s;
-    white-space: nowrap;
-    font-family: "Outfit", sans-serif;
-}
-
-.dropdown-item:hover {
-    background: #f7f5f2;
-    color: #e05c2e;
-} */
-
 
 /* Responsive */
 @media (max-width: 700px) {
