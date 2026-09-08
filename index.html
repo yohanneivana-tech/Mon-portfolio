@@ -25,12 +25,25 @@
                 <li><a href="#contact">Contacts</a></li>
             </ul>
 
-            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+            <!-- Bouton burger (mobile seulement) -->
+            <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
     </nav>
+
+    <!-- Menu mobile -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#about" onclick="fermerMenu()">À propos</a></li>
+            <li><a href="#skills" onclick="fermerMenu()">Compétences</a></li>
+            <li><a href="#certifications" onclick="fermerMenu()">Certifications</a></li>
+            <li><a href="#projects" onclick="fermerMenu()">Projets</a></li>
+            <li><a href="#stage" onclick="fermerMenu()">Stage</a></li>
+            <li><a href="#contact" onclick="fermerMenu()">Contact</a></li>
+        </ul>
+    </div>
 
 <!-- =============================================
        HERO — First thing visitors see
@@ -47,7 +60,7 @@
 
             <div class="btn-group">
                 <a href="#projects" class="btn btn-primary">Mes Projets</a>
-                <a href="Document/cv-dev-Toukam-yohanne.pdf" download class="btn btn-primary">Mon CV</a>
+                <a href="Document/CV-Toukam-yohanne-administration-reseau.pdf" download class="btn btn-primary">Mon CV</a>
                 <a href="#contact" class="btn btn-primary">Me Contacter</a>
             </div>
             
@@ -407,7 +420,7 @@
             </div>
         </div>
 
-
+ 
         <!-- ══ PROJET 2 : JEU HÉROS ══ -->
         <div class="project-card" id="card-jeu">
 

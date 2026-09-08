@@ -147,3 +147,26 @@ document.addEventListener('keydown', function(e) {
         });
     }
 });
+
+/* ================================
+   MENU BURGER MOBILE
+================================ */
+function toggleMenu() {
+    document.getElementById('burger').classList.toggle('open');
+    document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+function fermerMenu() {
+    document.getElementById('burger').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open');
+}
+
+/* Ferme le menu si on clique en dehors */
+document.addEventListener('click', function(e) {
+    var burger = document.getElementById('burger');
+    var menu = document.getElementById('mobileMenu');
+    if (!burger.contains(e.target) && !menu.contains(e.target)) {
+        burger.classList.remove('open');
+        menu.classList.remove('open');
+    }
+});
